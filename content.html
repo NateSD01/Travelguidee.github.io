@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destinations | Nathan's Travel Guide</title>
+    <link rel="stylesheet" href="assets/styles.css">
+    <style>
+      
+       .prev,
+        .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            padding: 10px 20px;
+            color: #fff;
+            border: none;
+            border-radius: 25px;
+            transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+        }
+
+        .prev {
+            left: 0;
+            background-color: #FF5733;
+        }
+
+        .next {
+            right: 0;
+            background-color: #4CAF50; 
+        }
+
+        .prev:hover,
+        .next:hover {
+            transform: translateY(-2px);
+        }
+
+        .prev:active,
+        .next:active {
+            transform: translateY(0);
+        }
+        
+.slide-content {
+    text-align: center; 
+    margin-bottom: 20px; 
+}
+
+.slide-image {
+    max-width: 100%; 
+    height: auto;
+    max-height: 200px; 
+    margin-bottom: 10px; 
+     border-radius: 10px; 
+}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Nathan's Travel Guide</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="introduction.html">Introduction</a></li>
+                <li><a href="content.html">Destinations</a></li>
+                <li><a href="media.html">Media</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="destination-section">
+            <h2>Explore Cape Town</h2>
+            <p>Discover the captivating city of Cape Town, South Africa, and its iconic landmarks:</p>
+
+            <!-- Slide 1: Table Mountain -->
+            <div class="slide fade">
+                <div class="slide-content">
+                    <p><strong>Table Mountain:</strong> Dominating the city's skyline, Table Mountain offers breathtaking panoramic views of Cape Town and its surroundings. Take a cable car ride to the summit for an unforgettable experience.</p>
+                    <img class="slide-image" src="assets/table_mountain.jpg" alt="Table Mountain">
+                </div>
+            </div>
+
+            <!-- Slide 2: Robben Island -->
+            <div class="slide fade">
+                <div class="slide-content">
+                    <p><strong>Robben Island:</strong> Delve into South Africa's history with a visit to Robben Island, where Nelson Mandela was imprisoned for 18 years. Take a guided tour to learn about the island's significance in the country's struggle for freedom.</p>
+                    <img class="slide-image" src="assets/robben_island.jpg" alt="Robben Island">
+                </div>
+                </div>
+            </div>
+
+<!-- Slide 3: V&A Waterfront -->
+<div class="slide fade">
+    <div class="slide-content">
+        <p><strong>V&A Waterfront:</strong> Experience the vibrant V&A Waterfront, a bustling hub of shopping, dining, and entertainment. Explore its shops, markets, restaurants, and attractions, including the Two Oceans Aquarium.</p>
+        <img class="slide-image" src="assets/va_waterfront.jpg" alt="V&A Waterfront:">
+    </div>
+</div>
+
+<!-- Slide 4: Cape Winelands -->
+<div class="slide fade">
+    <div class="slide-content">
+        <p><strong>Cape Winelands:</strong> Just a short drive from Cape Town lies the picturesque Cape Winelands, renowned for its world-class vineyards and wine estates. Spend a day exploring the charming towns of Stellenbosch, Franschhoek, and Paarl, and indulge in wine tastings amidst stunning scenery.</p>
+        <img class="slide-image" src="assets/cape_winelands.jpg" alt="Cape Winelands:">
+    </div>
+</div>
+
+<!-- Slide 5: Boulders Beach -->
+<div class="slide fade">
+    <div class="slide-content">
+        <p><strong>Boulders Beach:</strong> Get up close and personal with African penguins at Boulders Beach, a sheltered cove in Simon's Town. Watch these adorable creatures waddle along the sandy shores and swim in the crystal-clear waters.</p>
+        <img class="slide-image" src="assets/boulders_beach.jpg" alt="Boulders Beach:">
+    </div>
+</div>
+
+<!-- Slide 6: Kirstenbosch Botanical Garden -->
+<div class="slide fade">
+    <div class="slide-content">
+        <p><strong>Kirstenbosch Botanical Garden:</strong> Escape to nature at Kirstenbosch Botanical Garden, a UNESCO World Heritage Site known for its diverse flora and stunning landscapes. Explore its various gardens, walkways, and trails, and enjoy picnics amidst the beauty of indigenous plants.</p>
+        <img class="slide-image" src="assets/botanical_garden.jpg" alt="Kirstenbosch Botanical Garden:">
+    </div>
+</div>
+
+  
+    <button class="prev" onclick="plusSlides(-1)">Previous</button>
+    <button class="next" onclick="plusSlides(1)">Next</button>
+
+</section>
+
+            
+            <script>
+                  let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function showSlides(n) {
+            let i;
+            const slides = document.getElementsByClassName("slide");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex - 1].style.display = "block";
+        }
+            </script>
+    </main>
+</body>
+</html>

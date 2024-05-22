@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nathan's Travel Guide</title>
+    <link rel="stylesheet" href="assets/styles.css">
+    <style>
+        body {
+            margin: 0; 
+            padding: 0; 
+            background-image: url('assets/table_mountain_transparent.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.8); 
+            padding: 0.1px;
+            border-radius: 10px;
+            max-width: 600px; 
+            margin: auto;
+            overflow: hidden; 
+            position: relative;
+            box-sizing: border-box; 
+        }
+
+        .slide-container {
+            display: flex;
+            width: 100%; 
+            transition: transform 0.5s ease; 
+        }
+
+        .slide {
+            flex: 0 0 100%; 
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center;
+            display: none; 
+        }
+
+        .slide.active {
+            display: block; 
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            max-height: 300px;
+            margin-bottom: 1px;
+            border-radius: 15px; 
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1px;
+        }
+
+        .button {
+            padding: 10px 20px;
+            color: #00264D; 
+            border: none;
+            cursor: pointer;
+            border-radius: 25px;
+            transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+            background-color: #FFD166; 
+            color: #00264D; 
+        }
+
+        .button:active {
+            transform: translateY(0);
+            background-color: #FFD166; 
+            color: #00264D; 
+        }
+
+        .button-prev {
+            background-color: #4CAF50;
+        }
+
+        .button-next {
+            background-color: #008CBA;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Nathan's Travel Guide</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="introduction.html">Introduction</a></li>
+                <li><a href="content.html">Destinations</a></li>
+                <li><a href="media.html">Media</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="slide-container">
+            <div class="slide active">
+                <h2>Welcome to Nathan's Travel Guide!</h2>
+                <p>Explore the beauty of Cape Town and beyond with our comprehensive travel guide. From breathtaking landscapes to cultural experiences, we'll help you plan your dream vacation.</p>
+                <img src="assets/cape_town.jpg" alt="Cape Town">
+            </div>
+            <div class="slide">
+                <h2>Why Choose Nathan's Travel Guide?</h2>
+                <ul>
+                    <li>Expert recommendations from experienced travelers</li>
+                    <li>Curated lists of top attractions and activities</li>
+                    <li>Interactive maps to help you navigate with ease</li>
+                    <li>Personalized itineraries tailored to your interests</li>
+                    <li>Travel tips and advice for a smooth journey</li>
+                </ul>
+                <img src="assets/explore.jpg" alt="Explore">
+            </div>
+            <div class="slide">
+                <h2>Start Planning Your Adventure Today!</h2>
+                <p>Ready to embark on your next journey? Explore our destination guides, browse through stunning photos, and get inspired for your upcoming trip.</p>
+                <a href="content.html"><button class="button">Explore Destinations</button></a>
+            </div>
+        </div>
+        <div class="button-container">
+            <button class="button button-prev" onclick="prevSlide()">Previous</button>
+            <button class="button button-next" onclick="nextSlide()">Next</button>
+        </div>
+    </main>
+
+    <script>
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+
+        function showSlide(n) {
+            slides.forEach((slide, index) => {
+                if (index === n) {
+                    slide.classList.add('active');
+                } else {
+                    slide.classList.remove('active');
+                }
+            });
+        }
+
+        function nextSlide() {
+            if (slideIndex < slides.length - 1) {
+                slideIndex++;
+            } else {
+                slideIndex = 0; 
+            }
+            showSlide(slideIndex);
+        }
+
+        function prevSlide() {
+            if (slideIndex > 0) {
+                slideIndex--;
+            } else {
+                slideIndex = slides.length - 1; 
+            }
+            showSlide(slideIndex);
+        }
+
+       
+        showSlide(slideIndex);
+    </script>
+</body>
+</html>

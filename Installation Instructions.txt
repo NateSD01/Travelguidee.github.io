@@ -1,0 +1,16 @@
+1.Download the Zipped file
+2.Extract the files
+- Locate the downloaded file and extract its contents using a file extraction tool like WinZip.
+- Right click on the file and select "Extract here".
+
+3.Open the Index Page: 
+- Once the files are extracted, navigate to the extracted folder. Find the "index.html" file within the folder.
+
+4.Run In Web Browser:
+-Run the "index.html" preferably with Google Chrome.
+
+5.Navigate the Web Application:
+- Once the index page is loaded, you can navigate through the entire web application using the provided links in the homepage.
+
+6. Ensure Proper Folder Structure
+- Make sure that all files and folders extracted from the downloaded zipped file are kept together in the same directory. This ensures that the web application functions correctly
